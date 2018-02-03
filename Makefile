@@ -8,11 +8,9 @@ CXXFLAGS	=	-W -Wall -Wextra -Werror -Wshadow -Wunreachable-code -Wconversion
 CXXFLAGS	+=	-Wswitch-default -Wswitch-enum
 CXXFLAGS	+=	-Wuninitialized -Winit-self
 CXXFLAGS	+=	-fstack-protector-strong
-CXXFLAGS	+=	-pedantic -std=c++17
+CXXFLAGS	+=	-pedantic -Weffc++ -std=c++17
 CXXFLAGS	+=	-march=native
 CPPFLAGS	=	-I include
-
-LDLIBS		=	-lm
 
 UTIL_DIR	=	util
 UTIL_SRC	=	\
@@ -32,7 +30,7 @@ NAME		=	$(addprefix $(BIN_DIR)/, $(BIN_NAME))
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(XX) -o $(NAME) $(OBJS) $(LDLIBS)
+		$(XX) -o $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)
