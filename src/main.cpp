@@ -16,6 +16,7 @@ int		main()
 	std::stack<std::string>	words;
 	std::string		rword;
 	int			length;
+	int			nb_words;
 
 	std::cout << "What is the length of the word you want ?" << std::endl;
 	std::cin >> length;
@@ -31,11 +32,17 @@ int		main()
 	}
 
 	char			*c_rword = strdup(rword.c_str());
-	c_rword = strfry(c_rword);
-	rword = c_rword;
-	rword.resize(10);
-	free(c_rword);
 
-	std::cout << rword << std::endl;
+	std::cout << "How many random words do you want ?" << std::endl;
+	std::cin >> nb_words;
+
+	for (int i = 0; i < nb_words; i++) {
+		c_rword = strfry(c_rword);
+		rword = c_rword;
+		rword.resize(10);
+		std::cout << rword << std::endl;
+	}
+
+	free(c_rword);
 	return 0;
 }
