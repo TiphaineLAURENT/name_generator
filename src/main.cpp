@@ -39,7 +39,7 @@ int		main()
 	for (int i = 0; i < nb_words; i++) {
 		c_rword = strfry(c_rword);
 		rword = c_rword;
-		rword.resize(10);
+		rword.resize(length);
 		std::cout << rword << std::endl;
 	}
 
